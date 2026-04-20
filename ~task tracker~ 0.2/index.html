@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>task tracker</title>
+
+  <!--Подключеные файлы-->
+  <link rel="stylesheet" href="CSS/index.css">
+  <script src="JS/index.js" defer></script>
+</head>
+
+
+
+<body>
+  <!--Шапка-->
+  <header>
+<div class="app-container">
+  <div class="header">
+    <h1>~task tracker~</h1>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <span class="auth-status" id="authStatus">🔒 Не авторизован</span>
+      <button class="auth-btn" id="authButton">🔑 Войти</button>
+    </div>
+  </div>
+    </header>
+
+
+
+
+
+  <!--Тело-->
+    <main>
+  <!-- Панель разделов все есть :3-->
+  <div class="nav-sections" id="navSections">
+    <button data-section="overdue" class="section-btn">📛 Просроченные</button>
+    <button data-section="inprogress" class="section-btn">⚙️ Делаю сейчас</button>
+    <button data-section="today" class="section-btn">📅 На сегодня</button>
+    <button data-section="completed" class="section-btn">✅ Выполненные</button>
+    <button data-section="all" class="section-btn">🗂️ Все задачи</button>
+  </div>
+
+  <!-- Основной блок отображения задач -->
+  <div class="board" id="boardContainer">
+    <div class="section-title" id="currentSectionTitle">Просроченные задачи</div>
+    <div id="tasksContainer" class="tasks-list">
+    </div>
+  </div>
+
+  <!-- Блок добавления / изменения задачи -->
+  <div class="form-panel" id="formPanel">
+    <div class="form-title" id="formTitle">➕ Добавить новую задачу</div>
+    <div class="form-group">
+      <label>Название задачи *</label>
+      <input type="text" id="taskTitleInput" placeholder="Например: Встреча с командой">
+    </div>
+    <div class="form-group">
+      <label>Описание / детали</label>
+      <textarea id="taskDescInput" rows="2" placeholder="Что нужно сделать?"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Ответственный (имя)</label>
+      <input type="text" id="taskOwnerInput" placeholder="Имя сотрудника">
+    </div>
+    <div class="form-group">
+      <label>Дата (ДД.ММ.ГГГГ)</label>
+      <input type="text" id="taskDateInput" placeholder="например 19.02.2016">
+    </div>
+    <div class="form-group">
+      <label>Статус</label>
+      <select id="taskStatusSelect">
+        <option value="today">На сегодня</option>
+        <option value="inprogress">Делаю сейчас</option>
+        <option value="overdue">Просроченные</option>
+        <option value="completed">Выполненные</option>
+      </select>
+    </div>
+    <div class="form-buttons">
+      <button class="btn-primary" id="saveTaskBtn">💾 Сохранить задачу</button>
+      <button class="btn-secondary" id="cancelEditBtn">Отменить</button>
+    </div>
+    <div id="formError" class="error-msg"></div>
+  </div>
+    </main>
+
+    
+
+
+  <!--Подвал-->
+  <footer>~task tracker~ Ваш самый лучший трекер задач
+    <br>
+    <h2>При появление проблем обратитесь к нам:<h2> 
+      <div class="imget">
+    <br>
+    <a href="help.html"><img src="картинки\telegram_3670070.png" width="70" height="70" alt="Иконка телеграмма"></a>
+    <a href="help.html"><img src="картинки\vkontakte_4494517.png" width="70" height="70" alt="Иконка ВК"></a>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

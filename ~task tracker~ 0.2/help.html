@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центр помощи</title>
+
+    <!--Подключеные файлы-->
+  <link rel="stylesheet" href="CSS help\help.css">
+  <script src="JS help\help.js" defer></script>
+
+
+
+</head>
+<body>
+
+    <div class="help-block">
+        
+        <!-- Шапка блока-->
+        <div class="help-header">
+        <h1>~Центр помощи~</h1>
+            <p>Мы здесь, чтобы помочь вам 24/7</p>
+        </div>
+
+        <div class="help-content">
+            
+            <!-- FAQ блок -->
+            <div class="faq-title">Часто задаваемые вопросы:</div>
+            
+            <div id="faqList">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Кнопки «Изменить» и «Удалить» не нажимаются
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Проверьте, авторизованы ли вы (в правом верхнем углу должно быть написано «Авторизовано»).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        После обновления страницы задачи исчезли 
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                       Возможно, браузер очистил кэш. Либо вы открыли страницу в режиме «Инкогнито»/«Приватный». Используйте обычный режим.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Дата отображается некорректно
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                      Убедитесь, что вы вводите дату строго в формате ДД.ММ.ГГГГ (например, 19.02.2016).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                       Ошибка «Название задачи обязательно»
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Поле «Название задачи» не может быть пустым. Заполните его перед сохранением.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Кнопка -->
+            <button class="support-btn" onclick="alert('Спасибо! Мы свяжемся с вами в ближайшее время.')">
+                Написать в поддержку
+            </button>
+
+            <button class="support-btn">
+               <a class="link" href="index.html"> Вернутся на главную страницу</a> 
+            </button>
+        </div>
+    </div>
+
+    
+</html>
+</body>
