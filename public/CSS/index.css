@@ -1,0 +1,398 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #89af71 0%, #e4ff96 100%);
+  padding: 1.5rem;
+  color: #0f172a;
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* Контейнер для логотипа и заголовка */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Стили для логотипа */
+.site-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.site-logo:hover {
+  transform: scale(1.05);
+}
+
+/* шапка */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.header-auth {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e293b, #2c3e66);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* кнопка авторизации */
+.auth-btn {
+  background: #1e293b;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-btn:hover {
+  background: #0f172a;
+  transform: scale(0.97);
+}
+
+.auth-status {
+  font-size: 0.8rem;
+  background: #e2e8f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+/* Кнопка Центр помощи */
+.help-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.help-btn-top {
+  background: linear-gradient(135deg, #87ad54, #6e8f45);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.help-btn-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #6e8f45, #5a7336);
+}
+
+/* панель навигации */
+.nav-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 60px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.section-btn {
+  background: transparent;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #334155;
+}
+
+.section-btn.active {
+  background: #1e293b;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.section-btn:hover:not(.active) {
+  background: #e2e8f0;
+}
+
+/* основная карточка с задачами */
+.board {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  border-left: 7px solid #acd698;
+  padding-left: 1rem;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-card {
+  background: #f8fafc;
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid #e2e8f0;
+  transition: 0.1s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.task-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #0f172a;
+  word-break: break-word;
+}
+
+.task-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #475569;
+  margin: 0.4rem 0;
+  flex-wrap: wrap;
+}
+
+.task-desc {
+  color: #334155;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.7rem;
+  justify-content: flex-end;
+}
+
+.edit-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: 0.1s;
+}
+
+.edit-btn {
+  background: #a2dfa1;
+  color: #305a43;
+}
+
+.delete-btn {
+  background: #dbe597;
+  color: #8a8425;
+}
+
+.edit-btn:hover {
+  background: #bfe9bf;
+}
+
+.delete-btn:hover {
+  background: #e2e5b6;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* форма добавления / изменения */
+.form-panel {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.form-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #1e293b;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  font-size: 0.9rem;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: #dc2626;
+  font-size: 0.75rem;
+  margin-top: 5px;
+}
+
+/* ПОДВАЛ не трогать */
+footer {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #62748c;
+  margin-top: 2rem;
+}
+
+.support-text {
+  font-size: 0.9rem;
+  color: #62748c;
+  margin-bottom: 10px;
+}
+
+/* Кнопка "Написать в поддержку" */
+.support-btn-footer {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 12px 24px;
+  background: #87ad54;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.support-btn-footer:hover {
+  background: #6e8f45;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Иконки мессенджеров */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social-link {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+.social-link img {
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}

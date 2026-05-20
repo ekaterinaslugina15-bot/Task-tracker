@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>task tracker</title>
+  <link rel="stylesheet" href="CSS/index.css">
+  <script src="JS/index.js" defer></script>
+</head>
+
+<body>
+  <div class="app-container">
+    <header>
+  <div class="header">
+    <div class="logo-container">
+      <img src="картинки/logo.png" alt="Логотип Task Tracker" class="site-logo">
+      <h1>~task tracker~</h1>
+    </div>
+    <div class="header-auth">
+      <span class="auth-status" id="authStatus">🔒 Не авторизован</span>
+      <button class="auth-btn" id="authButton">🔑 Войти</button>
+    </div>
+  </div>
+</header>
+
+    <main>
+      <!-- Кнопка Центр помощи вверху (СВЕРХУ!) -->
+      <div class="help-button-container">
+        <button class="help-btn-top" type="button" onclick="window.location.href='help.html'">
+          ❓ Центр помощи
+        </button>
+      </div>
+
+      <!-- Панель разделов -->
+      <div class="nav-sections" id="navSections">
+        <button type="button" data-section="overdue" class="section-btn">📛 Просроченные</button>
+        <button type="button" data-section="inprogress" class="section-btn">⚙️ Делаю сейчас</button>
+        <button type="button" data-section="today" class="section-btn">📅 На сегодня</button>
+        <button type="button" data-section="completed" class="section-btn">✅ Выполненные</button>
+        <button type="button" data-section="all" class="section-btn">🗂️ Все задачи</button>
+      </div>
+
+      <!-- Основной блок отображения задач -->
+      <div class="board" id="boardContainer">
+        <div class="section-title" id="currentSectionTitle">Просроченные задачи</div>
+        <div id="tasksContainer" class="tasks-list"></div>
+      </div>
+
+      <!-- Блок добавления / изменения задачи -->
+      <div class="form-panel" id="formPanel">
+        <div class="form-title" id="formTitle">➕ Добавить новую задачу</div>
+        <div class="form-group">
+          <label for="taskTitleInput">Название задачи *</label>
+          <input type="text" id="taskTitleInput" placeholder="Например: Встреча с командой">
+        </div>
+        <div class="form-group">
+          <label for="taskDescInput">Описание / детали</label>
+          <textarea id="taskDescInput" rows="2" placeholder="Что нужно сделать?"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="taskOwnerInput">Ответственный (имя)</label>
+          <input type="text" id="taskOwnerInput" placeholder="Имя сотрудника">
+        </div>
+        <div class="form-group">
+          <label for="taskDateInput">Дата (ДД.ММ.ГГГГ)</label>
+          <input type="text" id="taskDateInput" placeholder="например 19.02.2016">
+        </div>
+        <div class="form-group">
+          <label for="taskStatusSelect">Статус</label>
+          <select id="taskStatusSelect" title="Выберите статус задачи" aria-label="Статус задачи">
+            <option value="today">На сегодня</option>
+            <option value="inprogress">Делаю сейчас</option>
+            <option value="overdue">Просроченные</option>
+            <option value="completed">Выполненные</option>
+          </select>
+        </div>
+        <div class="form-buttons">
+          <button type="button" class="btn-primary" id="saveTaskBtn">💾 Сохранить задачу</button>
+          <button type="button" class="btn-secondary" id="cancelEditBtn">Отменить</button>
+        </div>
+        <div id="formError" class="error-msg"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>~task tracker~ Ваш самый лучший трекер задач</p>
+      <p class="support-text">При появлении проблем обратитесь к нам:</p>
+      
+      <!-- Кнопка "Написать в поддержку" (В ПОДВАЛЕ) -->
+      <button class="support-btn-footer" type="button" onclick="alert('Спасибо! Мы свяжемся с вами в ближайшее время.')">
+        Написать в поддержку
+      </button>
+      
+      <!-- Иконки мессенджеров -->
+      <div class="social-links">
+        <a href="https://t.me/+jWvtulTnZ0UwYzVi" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">
+          <img src="картинки/telegram_3670070.png" width="45" height="45" alt="Telegram">
+        </a>
+        <a href="https://vk.me/join/0PVKYLnk5wjp5eLoTTpJGtSSr5qHxAx8JPs=" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="ВКонтакте">
+          <img src="картинки/vkontakte_4494517.png" width="45" height="45" alt="ВКонтакте">
+        </a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
